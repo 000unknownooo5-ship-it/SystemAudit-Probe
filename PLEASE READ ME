@@ -158,19 +158,7 @@ UNAUTHORIZED USE OF THIS SOFTWARE IS STRICTLY PROHIBITED AND MAY RESULT IN:
 
 BY DOWNLOADING, INSTALLING, OR USING THIS SOFTWARE, YOU ACKNOWLEDGE
 THAT YOU HAVE READ, UNDERSTAND, AND AGREE TO THESE TERMS.
-📞 Contact & Support
-Developer Contact
-For inquiries, support, or professional security consulting:
 
-text
-📱 Discord: szvnyx_
-Please include the following in your message:
-
-Your name and organization
-
-Purpose of inquiry (security testing, collaboration, questions)
-
-Relevant project name: SystemAudit-Probe
 
 Authorized Use Cases
 Scenario	Authorization Required
@@ -215,7 +203,6 @@ Auto-Install: Yes (dependencies)
 Webhook Support: Discord
 Data Exfiltration: 16 modules
 License: MIT with Liability Disclaimer
-Contact: szvnyx_ (Discord)
 🔒 Security Best Practices
 When using this tool for authorized engagements:
 
@@ -268,7 +255,5 @@ text
 │                                                                  │
 └────────────────────────────────────────────────────────────────────┘
 © 2026 SystemAudit-Probe Contributors | All Rights Reserved
-
-Contact: szvnyx_ on Discord
 
 This software is provided for educational and authorized security testing purposes only. The developer does not condone or support any illegal activities.
